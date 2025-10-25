@@ -171,9 +171,7 @@ submitBtn.addEventListener('click', ()=>{
 
 /* openGatewayBtn: abre link público do gateway (user will pay there) */
 openGatewayBtn.addEventListener('click', ()=>{
-  // Substitua o link abaixo pelo seu link de checkout (Mercado Pago / Efi) gerado no painel.
-  const genericLink = 'https://mpago.la/SEU_LINK'; // <-- troque por seu link real
-  window.open(genericLink, '_blank');
+  requestPixFromServer(); // chama a função mock do backend
 });
 
 /* If you want to call the server to generate QR (dynamic PIX), use this function */
