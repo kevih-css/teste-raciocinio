@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teste de Raciocínio — 32 Perguntas</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="quiz-container" role="main" aria-label="Questionário">
+    <div id="topAlert" class="top-alert" role="alert" aria-live="assertive">Por favor, responda todas as perguntas antes de enviar!</div>
+
+    <div class="title">Teste de Raciocínio — 32 perguntas</div>
+    <div class="subtitle">Escolha a resposta — a próxima pergunta aparecerá automaticamente.</div>
+
+    <section id="carousel" class="carousel" aria-live="polite"></section>
+
+    <div class="controls" role="group" aria-label="Controles do questionário">
+      <div class="progress" id="progressText">Respondidas: 0 / 32</div>
+      <button id="submitBtn" class="btn-primary" aria-hidden="true">Enviar respostas</button>
+    </div>
+
+    <!-- Donation area -->
+    <section id="donationArea" class="donation" aria-hidden="true">
+      <p id="donationText">O resultado do seu teste está pronto, porém para obtê-lo você poderia fazer uma doação de R$: 2,00 para apoiar nosso projeto?</p>
+      <!-- botão abre link público do gateway (Mercado Pago, Efi, etc.) -->
+      <button id="openGatewayBtn" class="btn-primary" aria-label="Abrir gateway de pagamento">Fazer doação</button>
+
+      <div id="donationLoader" style="display:none">
+        <div class="loader" aria-hidden="true"></div>
+        <div style="color:rgba(58,29,0,0.85);font-weight:600;margin-top:6px">Processando...</div>
+      </div>
+
+      <!-- PIX visual (mostrado quando backend retornar QR / copia-e-cola) -->
+      <div id="pixContainer" class="pix-container" aria-hidden="true">
+        <div class="pix-title">Escaneie o QR Code para concluir a doação</div>
+        <img id="pixQrCode" class="pix-qr" alt="QR Code PIX" src="" />
+        <div id="pixStatus" style="margin-top:10px;color:#3a1d00;font-weight:700">Aguardando pagamento...</div>
+        <div class="pix-line">
+          <input id="pixCode" class="pix-input" readonly value="" aria-label="Linha digitável do PIX (copiar)"/>
+          <button id="copyBtn" class="copy-btn" aria-label="Copiar código PIX">Copiar código</button>
+        </div>
+        <div id="copyMsg" class="copy-msg" role="status" aria-live="polite">Código copiado!</div>
+      </div>
+    </section>
+
+    <!-- Result area -->
+    <section id="resultArea" class="resultArea" aria-hidden="true">
+      <div id="resultTitle" style="font-weight:800;color:#3a1d00">Seu resultado</div>
+      <div id="resultValue" class="resultValue">--</div>
+      <div id="resultComment" class="resultComment"></div>
+
+      <div id="shareRow" class="share-row" style="display:none" aria-hidden="true">
+        <div id="shareWhats" class="share-btn share-whatsapp" title="Compartilhar no WhatsApp" aria-label="Compartilhar no WhatsApp"></div>
+        <div id="shareFace" class="share-btn share-face" title="Compartilhar no Facebook" aria-label="Compartilhar no Facebook"></div>
+        <div id="shareX" class="share-btn share-x" title="Compartilhar no X" aria-label="Compartilhar no X"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
